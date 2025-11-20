@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SampleSite - Home</title>
+    
+    <!-- VA Chat Widget CSS -->
+    <link rel="stylesheet" href="va-chat-widget.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            background: #f8f9fa;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        form.search {
+            display: flex;
+            gap: 10px;
+            max-width: 600px;
+        }
+        
+        .search__input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .search__input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .search__button {
+            padding: 12px 32px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search__button:hover {
+            background: #5568d3;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .card a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🌟 SampleSite</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-container">
+            <form class="search">
+                <input type="text" class="search__input" name="search" placeholder="Search our site..." aria-label="Search">
+                <button type="submit" class="search__button">Search</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to SampleSite</h1>
+            <p>Your one-stop destination for amazing services and information</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main>
+        <h2>What We Offer</h2>
+        
+        <div class="content-grid">
+            <div class="card">
+                <h3>📦 Services</h3>
+                <p>Explore our comprehensive range of services designed to meet your needs.</p>
+                <a href="services.html">Learn More →</a>
+            </div>
+            
+            <div class="card">
+                <h3>ℹ️ About Us</h3>
+                <p>Discover our mission, vision, and the team behind SampleSite.</p>
+                <a href="about.html">Read Our Story →</a>
+            </div>
+            
+            <div class="card">
+                <h3>📞 Contact</h3>
+                <p>Get in touch with us for inquiries, support, or partnerships.</p>
+                <a href="contact.html">Contact Us →</a>
+            </div>
+            
+            <div class="card">
+                <h3>❓ FAQ</h3>
+                <p>Find answers to commonly asked questions about our services.</p>
+                <a href="faq.html">View FAQs →</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #667eea;">
+            <h3 style="color: #667eea; margin-bottom: 1rem;">💬 Try Our AI Assistant</h3>
+            <p style="color: #666;">Click the chat button in the bottom-right corner to get instant help with:</p>
+            <ul style="margin: 1rem 0; padding-left: 2rem; color: #666;">
+                <li>Finding information about our services</li>
+                <li>Getting answers to common questions</li>
+                <li>Searching our entire website</li>
+                <li>Navigating to specific pages</li>
+            </ul>
+            <p style="color: #666;"><strong>Tip:</strong> You can also use the search bar above - it will automatically open the chat widget in search mode!</p>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SampleSite. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Powered by AI Chat Widget</p>
+        </div>
+    </footer>
+    
+    <!-- VA Chat Widget JS -->
+    <script src="va-chat-widget.js"></script>
+    <script src="va-search-integration.js"></script>
+</body>
+</html>

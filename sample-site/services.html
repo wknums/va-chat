@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - SampleSite</title>
+    
+    <!-- VA Chat Widget CSS -->
+    <link rel="stylesheet" href="va-chat-widget.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .search-bar {
+            background: #f8f9fa;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        form.search {
+            display: flex;
+            gap: 10px;
+            max-width: 600px;
+        }
+        
+        .search__input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .search__button {
+            padding: 12px 32px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .service-list {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+        
+        .service-item h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-item p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .service-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .service-item li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+        
+        .service-item li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🌟 SampleSite</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="search-bar">
+        <div class="search-container">
+            <form class="search">
+                <input type="text" class="search__input" name="search" placeholder="Search our site..." aria-label="Search">
+                <button type="submit" class="search__button">Search</button>
+            </form>
+        </div>
+    </div>
+    
+    <main>
+        <h1 class="page-title">Our Services</h1>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
+            We offer a comprehensive range of services to meet your needs. Learn more about what we can do for you.
+        </p>
+        
+        <div class="service-list">
+            <div class="service-item">
+                <h3>🎯 Consulting Services</h3>
+                <p>Expert advice and strategic guidance to help your business grow and succeed.</p>
+                <ul>
+                    <li>Business strategy development</li>
+                    <li>Market analysis and research</li>
+                    <li>Digital transformation consulting</li>
+                    <li>Process optimization</li>
+                </ul>
+            </div>
+            
+            <div class="service-item">
+                <h3>💻 Technology Solutions</h3>
+                <p>Cutting-edge technology services to modernize your operations.</p>
+                <ul>
+                    <li>Custom software development</li>
+                    <li>Cloud infrastructure setup</li>
+                    <li>AI and automation integration</li>
+                    <li>Mobile app development</li>
+                </ul>
+            </div>
+            
+            <div class="service-item">
+                <h3>📊 Analytics & Insights</h3>
+                <p>Data-driven insights to inform your decision-making process.</p>
+                <ul>
+                    <li>Business intelligence dashboards</li>
+                    <li>Predictive analytics</li>
+                    <li>Customer behavior analysis</li>
+                    <li>Performance metrics tracking</li>
+                </ul>
+            </div>
+            
+            <div class="service-item">
+                <h3>🛡️ Security & Compliance</h3>
+                <p>Protect your business with our comprehensive security solutions.</p>
+                <ul>
+                    <li>Cybersecurity assessments</li>
+                    <li>Compliance auditing</li>
+                    <li>Data protection strategies</li>
+                    <li>Risk management</li>
+                </ul>
+            </div>
+            
+            <div class="service-item">
+                <h3>🎓 Training & Support</h3>
+                <p>Empower your team with knowledge and ongoing assistance.</p>
+                <ul>
+                    <li>Professional development programs</li>
+                    <li>Technical training workshops</li>
+                    <li>24/7 customer support</li>
+                    <li>Documentation and resources</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SampleSite. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- VA Chat Widget JS -->
+    <script src="va-chat-widget.js"></script>
+    <script src="va-search-integration.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SampleSite</title>
+    
+    <!-- VA Chat Widget CSS -->
+    <link rel="stylesheet" href="va-chat-widget.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .search-bar {
+            background: #f8f9fa;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        form.search {
+            display: flex;
+            gap: 10px;
+            max-width: 600px;
+        }
+        
+        .search__input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .search__button {
+            padding: 12px 32px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-list {
+            margin-top: 2rem;
+        }
+        
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        .faq-item h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .faq-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🌟 SampleSite</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="search-bar">
+        <div class="search-container">
+            <form class="search">
+                <input type="text" class="search__input" name="search" placeholder="Search our site..." aria-label="Search">
+                <button type="submit" class="search__button">Search</button>
+            </form>
+        </div>
+    </div>
+    
+    <main>
+        <h1 class="page-title">Frequently Asked Questions</h1>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
+            Find answers to common questions about our services and platform.
+        </p>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>What services does SampleSite offer?</h3>
+                <p>
+                    We offer a comprehensive range of services including consulting, technology solutions, 
+                    analytics and insights, security and compliance, and training and support. Visit our 
+                    <a href="services.html" style="color: #667eea;">Services page</a> for more details.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How can I get started with SampleSite?</h3>
+                <p>
+                    Getting started is easy! Simply contact us through our 
+                    <a href="contact.html" style="color: #667eea;">Contact page</a>, or use our AI chat 
+                    assistant to speak with our team. We'll guide you through the process and help you 
+                    find the right solution for your needs.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What is the AI chat assistant?</h3>
+                <p>
+                    Our AI chat assistant is an intelligent virtual assistant that can help you navigate 
+                    our website, answer questions, and search for specific information. Click the chat 
+                    button in the bottom-right corner to start a conversation. It supports both chat mode 
+                    for questions and search mode for finding specific content.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How does the search feature work?</h3>
+                <p>
+                    You can use the search bar at the top of any page to search our site. When you submit 
+                    a search query, our AI assistant will automatically open in search mode and provide 
+                    relevant results from across our entire website.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Do you offer customer support?</h3>
+                <p>
+                    Yes! We offer 24/7 customer support through multiple channels including email, phone, 
+                    and our AI chat assistant. Visit our <a href="contact.html" style="color: #667eea;">Contact page</a> 
+                    for all available support options.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Is my data secure with SampleSite?</h3>
+                <p>
+                    Absolutely. We take data security very seriously and implement industry-standard 
+                    security measures including encryption, secure access controls, and regular security 
+                    audits. Learn more about our security practices on our 
+                    <a href="services.html" style="color: #667eea;">Services page</a>.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Can I customize the services to fit my needs?</h3>
+                <p>
+                    Yes! We understand that every client has unique requirements. Our team works closely 
+                    with you to customize our services to match your specific needs and objectives. 
+                    Contact us to discuss your requirements.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What industries do you serve?</h3>
+                <p>
+                    We serve clients across various industries including technology, healthcare, finance, 
+                    education, retail, and more. Our diverse experience allows us to provide tailored 
+                    solutions regardless of your industry.
+                </p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How can I provide feedback?</h3>
+                <p>
+                    We value your feedback! You can reach out through our 
+                    <a href="contact.html" style="color: #667eea;">Contact page</a> or speak directly 
+                    with our AI assistant. Your input helps us continuously improve our services.
+                </p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #667eea;">
+            <h3 style="color: #667eea; margin-bottom: 1rem;">❓ Still Have Questions?</h3>
+            <p style="color: #666;">
+                Our AI assistant is ready to help! Click the chat button in the bottom-right corner 
+                to get instant answers to your questions.
+            </p>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SampleSite. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- VA Chat Widget JS -->
+    <script src="va-chat-widget.js"></script>
+    <script src="va-search-integration.js"></script>
+</body>
+</html>

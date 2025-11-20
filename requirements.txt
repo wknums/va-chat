@@ -1,0 +1,10 @@
+azure-ai-projects>=2.0.0b2
+azure-ai-agents>=1.2.0b5
+agent-framework-azure-ai>=1.0.0b251114 --pre
+azure-identity>=1.25.1
+azure-search-documents>=11.6.0
+python-dotenv>=1.2.1
+openai>=2.8.0
+fastapi>=0.121.2
+uvicorn[standard]>=0.38.0
+pydantic>=2.12.4

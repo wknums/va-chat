@@ -1,0 +1,87 @@
+# Resource Group Configuration
+# IMPORTANT: These are existing resources - Terraform will NOT create or destroy them
+va_resource_group = "va-chat-rg"
+
+# Optional: If your Container App should be in a different resource group, specify it here
+# container_app_resource_group = "different-rg-name"
+
+# Optional: If resources are in different locations, specify them here
+# container_app_location = "eastus2"
+# container_registry_location = "eastus"
+
+# Container Registry Configuration
+# Set to true to create a new Container Registry
+create_container_registry = true
+container_registry_name   = "vachatacr"
+
+# Optional: If Container Registry is in a different resource group
+# container_registry_resource_group = "acr-rg-name"
+
+# Log Analytics Configuration
+create_log_analytics        = true
+log_analytics_workspace_name = "va-chat-logs"
+
+# Container App Environment Configuration
+create_container_app_environment = true
+container_app_environment_name   = "va-chat-env"
+
+# Container App Configuration
+container_app_name     = "va-chat-backend"
+managed_identity_name  = "va-chat-identity"
+container_image_name   = "va-chat-backend"
+container_image_tag    = "latest"
+
+# Container Resources
+container_cpu    = 0.5
+container_memory = "1Gi"
+min_replicas     = 1
+max_replicas     = 3
+
+# Azure AI Foundry Configuration (from your .env file)
+azure_foundry_project_endpoint  = "https://wk-aiservcs-eastus2.services.ai.azure.com/api/projects/wk-aiservcs-eastus2-project"
+azure_foundry_region            = "eastus2"
+azure_foundry_deployment_name   = "gpt-4.1-mini"
+azure_deployment_version        = "2025-04-14"
+azure_foundry_agent_id          = "asst_fBEQHC9OTLQb8UgW4uLAx8TK"
+
+# Azure Entra ID Configuration
+azure_tenant_id = "16b3c013-d300-468d-ac64-7eda0820b6d3"
+
+# Optional: Azure AI Search Configuration (Phase 1B)
+# azure_search_endpoint   = ""
+# azure_search_index_name = ""
+
+# Optional: Azure Bot Framework Configuration
+# azure_bot_id       = ""
+# azure_bot_endpoint = ""
+
+# Application Configuration
+environment = "production"
+log_level   = "INFO"
+
+# RBAC Configuration
+configure_rbac = true
+
+# Azure AI Foundry Project RBAC
+# Set the full resource ID of your AI Foundry PROJECT (not hub/workspace) for automatic role assignment
+# Format: /subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.MachineLearningServices/workspaces/{project-name}
+# Note: In the new AI Foundry architecture, projects are the scope for RBAC, not hubs
+ai_foundry_project_scope = ""
+ai_foundry_role          = "Azure AI Developer"
+
+# Optional: Additional role assignments
+# additional_role_assignments = [
+#   {
+#     role_definition_name = "Cognitive Services User"
+#     scope                = "/subscriptions/{subscription-id}/resourceGroups/{rg-name}/providers/Microsoft.CognitiveServices/accounts/{account-name}"
+#   }
+# ]
+
+# Tags
+tags = {
+  Project     = "va-chat"
+  ManagedBy   = "Terraform"
+  Environment = "Production"
+  CostCenter  = "IT"
+}
+

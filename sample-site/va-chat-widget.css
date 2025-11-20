@@ -1,0 +1,507 @@
+/* VA Chatbot Widget Styles */
+
+:root {
+    --va-primary: #001489;
+    --va-primary-light: #1a2da1;
+    --va-white: #ffffff;
+    --va-gray-light: #f5f5f5;
+    --va-gray: #666666;
+    --va-border: #ddd;
+    --va-shadow: rgba(0, 20, 137, 0.15);
+    --va-error: #d32f2f;
+}
+
+/* Chat Widget Container */
+#va-chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    z-index: 9999;
+}
+
+/* Chat Button (Minimized State) */
+#va-chat-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--va-primary);
+    color: var(--va-white);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--va-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 24px;
+}
+
+#va-chat-button:hover {
+    background: var(--va-primary-light);
+    transform: scale(1.05);
+}
+
+#va-chat-button.hidden {
+    display: none;
+}
+
+/* Chat Container (Expanded State) */
+#va-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 380px;
+    height: 600px;
+    min-width: 320px;
+    min-height: 400px;
+    max-width: 100vw;
+    max-height: calc(100vh - 40px);
+    background: var(--va-white);
+    border-radius: 12px;
+    border: 3px solid #999;
+    box-shadow: 0 8px 32px var(--va-shadow);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#va-chat-container.active {
+    display: flex;
+}
+
+/* Resize Handles */
+\.va-resize-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    background: var(--va-primary);
+    border: 2px solid white;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+\.va-resize-handle:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+\.va-resize-nw {
+    top: -10px;
+    left: -10px;
+    cursor: nw-resize;
+}
+
+\.va-resize-ne {
+    top: -10px;
+    right: -10px;
+    cursor: ne-resize;
+}
+
+\.va-resize-sw {
+    bottom: -10px;
+    left: -10px;
+    cursor: sw-resize;
+}
+
+\.va-resize-se {
+    bottom: -10px;
+    right: -10px;
+    cursor: se-resize;
+}
+
+/* Full-width mode for search results */
+#va-chat-container.search-mode {
+    width: calc(100vw - 40px) !important;
+    max-width: 1800px !important;
+    height: calc(100vh - 100px) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    bottom: 50px !important;
+    resize: both !important;
+    overflow: auto !important;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat Header */
+#va-chat-header {
+    background: var(--va-primary);
+    color: var(--va-white);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    user-select: none;
+}
+
+#va-chat-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #d0d0d0;
+}
+
+#va-chat-header \.va-header-controls {
+    display: flex;
+    gap: 8px;
+}
+
+#va-chat-header button {
+    background: transparent;
+    border: none;
+    color: var(--va-white);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    font-size: 14px;
+}
+
+#va-chat-header button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mode Toggle */
+#va-mode-toggle {
+    background: var(--va-gray-light);
+    padding: 8px;
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--va-border);
+}
+
+#va-mode-toggle button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: all 0.2s;
+    color: var(--va-gray);
+}
+
+#va-mode-toggle button.active {
+    background: var(--va-primary);
+    color: var(--va-white);
+    font-weight: 600;
+}
+
+/* Chat Messages Area */
+#va-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--va-gray-light);
+}
+
+/* Message Bubbles */
+\.va-message {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+\.va-message.user {
+    align-self: flex-end;
+    margin-left: 25%;
+}
+
+\.va-message.assistant {
+    align-self: flex-start;
+    margin-right: 25%;
+}
+
+\.va-message-content {
+    padding: 12px 16px;
+    border-radius: 16px;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-size: 14px;
+    max-height: none;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+\.va-message.user \.va-message-content {
+    background: linear-gradient(135deg, #001489 0%, #1a2da1 100%);
+    color: var(--va-white);
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 20, 137, 0.25);
+}
+
+\.va-message.assistant \.va-message-content {
+    background: #ffffff;
+    color: #1a1a1a;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    max-height: none;
+    overflow: visible;
+}
+
+\.va-message-content a {
+    color: #1a0dab;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+\.va-message-content a:hover {
+    color: #0066cc;
+}
+
+/* Search Results */
+\.va-search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+\.va-search-result {
+    background: #f8f9fa;
+    padding: 14px;
+    border-left: 4px solid var(--va-primary);
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+\.va-search-result:hover {
+    background: #e3f2fd;
+    transform: translateX(2px);
+    box-shadow: 0 2px 8px rgba(0, 20, 137, 0.1);
+}
+
+\.va-search-result h4 {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+\.va-search-result h4::before {
+    content: "📄";
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+\.va-search-result h4 a {
+    color: var(--va-primary);
+    text-decoration: none;
+    flex: 1;
+}
+
+\.va-search-result a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+\.va-result-url {
+    font-size: 14px;
+    color: #006621;
+    margin-bottom: 4px;
+    word-break: break-all;
+    line-height: 1.3;
+}
+
+\.va-result-url a {
+    color: #006621;
+    text-decoration: none;
+}
+
+\.va-result-url a:hover {
+    text-decoration: underline;
+}
+
+\.va-search-result p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/* Loading Indicator */
+\.va-loading {
+    display: flex;
+    gap: 4px;
+    padding: 10px 14px;
+}
+
+\.va-loading span {
+    width: 8px;
+    height: 8px;
+    background: var(--va-gray);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+\.va-loading span:nth-child(1) { animation-delay: -0.32s; }
+\.va-loading span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+/* Input Area */
+#va-chat-input-area {
+    padding: 12px 16px;
+    border-top: 1px solid var(--va-border);
+    background: var(--va-white);
+    display: flex;
+    gap: 8px;
+}
+
+#va-chat-input {
+    flex: 1;
+    border: 1px solid var(--va-border);
+    border-radius: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+    max-height: 100px;
+    font-family: inherit;
+}
+
+#va-chat-input:focus {
+    border-color: var(--va-primary);
+}
+
+#va-send-button {
+    background: var(--va-primary);
+    color: var(--va-white);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+#va-send-button:hover:not(:disabled) {
+    background: var(--va-primary-light);
+}
+
+#va-send-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Citations */
+\.va-citations {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-left: 3px solid var(--va-primary);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+\.va-citations-title {
+    font-weight: 700;
+    color: var(--va-primary);
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+\.va-citation {
+    display: flex;
+    align-items: flex-start;
+    color: var(--va-primary);
+    text-decoration: none;
+    padding: 6px 8px;
+    margin: 4px 0;
+    background: white;
+    border-radius: 4px;
+    transition: all 0.2s;
+    border: 1px solid #e0e0e0;
+}
+
+\.va-citation:hover {
+    background: #e3f2fd;
+    border-color: var(--va-primary);
+    transform: translateX(2px);
+}
+
+\.va-citation::before {
+    content: "🔗";
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+/* Error Messages */
+\.va-error {
+    background: #ffebee;
+    color: var(--va-error);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    border-left: 3px solid var(--va-error);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    #va-chat-container {
+        width: calc(100vw - 40px);
+        height: calc(100vh - 40px);
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Scrollbar Styling */
+#va-chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#va-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#va-chat-messages::-webkit-scrollbar-thumb {
+    background: var(--va-border);
+    border-radius: 3px;
+}
+
+#va-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--va-gray);
+}
+
